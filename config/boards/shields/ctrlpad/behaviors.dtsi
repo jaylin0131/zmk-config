@@ -1,33 +1,33 @@
 / {
-    behaviors {
+    macros {
         alt_tab: alt_tab {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ALT_TAB";
-            bindings = <&kp LALT &kp TAB>;
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LALT &kp TAB>;
         };
 
         ctrl_tab: ctrl_tab {
-            compatible = "zmk,behavior-tap-dance";
-            lable = "CTRL_TAB";
-            bindings = <&kp LCTRL &kp TAB>;
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LCTRL &kp TAB>;
         };
 
         deploy: deploy {
-            compatible = "zmk,behavior-tap-dance";
-            label = "DEPLOY";
-            bindings = <&kp LSHIFT &kp F5>;
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LSHIFT &kp F5>;
         };
 
         reload: reload {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RELOAD";
-            bindings = <&kp LCTRL &kp R>;
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LCTRL &kp R>;
         };
 
          screencut: screencut {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SCREENCUT";
-            bindings = <&kp LGUI &kp LSFT &kp S>;
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LGUI &kp LSFT &kp S>;
         };
     };
 };
