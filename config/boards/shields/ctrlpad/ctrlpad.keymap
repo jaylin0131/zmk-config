@@ -47,7 +47,7 @@
 // ----------------------
             bindings = <
     &tog 1 &kp N1 &kp N2
-    &kp ESC &kp PRINT_SCREEN &reload 
+    &kp ESC &kp PSCRN &reload 
     &ctrl_tab  &kp LCTRL &alt_tab
             >;
         };
