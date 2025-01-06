@@ -9,6 +9,38 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    macros {
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LALT &kp TAB>;
+        };
+
+        ctrl_tab: ctrl_tab {
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LCTRL &kp TAB>;
+        };
+
+        deploy: deploy {
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LSHIFT &kp F5>;
+        };
+
+        reload: reload {
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LCTRL &kp R>;
+        };
+
+         screencut: screencut {
+            compatible = "zmk,behavior-macro";
+
+            bindings = <&macro_tap &kp LGUI &kp LSFT &kp S>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,8 +53,8 @@
 // ----------------------
             bindings = <
     &tog 1 &kp N1 &kp N2
-    &kp ESC &kp PRINT_SCREEN &mt LCTRL R 
-    &mt LCTRL TAB  &kp LCTRL &mt LALT TAB
+    &kp ESC &screencut &reload 
+    &ctrl_tab  &kp LCTRL &alt_tab
             >;
         };
 
@@ -36,7 +68,7 @@
             bindings = <
     &tog 0 &kp SPACE &kp ENTER
     &trans &trans  &trans
-    &trans &mt LSHIFT F5  &trans
+    &trans &deploy   &trans
             >;
         };
     };
