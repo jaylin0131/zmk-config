@@ -20,7 +20,7 @@
 // |  CTRL_TAB  |  LCTRL  |  ALT_TAB  |
 // ----------------------
             bindings = <
-    &tog BOT &kp C_VOL_UP &kp C_VOL_DOWN
+    &tog 1 &kp N1 &kp N2
     &kp ESC &screencut &reload 
     &ctrl_tab  &kp LCTRL &alt_tab
             >;
@@ -34,7 +34,7 @@
 // |  CTRL_TAB  |  DEPLOY  |  ALT_TAB  |
 // -----------------------
             bindings = <
-    &tog FIRST &kp SPACE &kp ENTER
+    &tog 0 &kp SPACE &kp ENTER
     &trans &trans  &trans
     &trans &deploy   &trans
             >;
