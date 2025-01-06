@@ -1,0 +1,6 @@
+if SHIELD_CTRLPAD
+
+config ZMK_KEYBOARD_NAME
+    default "ctrlpad"
+
+endif
