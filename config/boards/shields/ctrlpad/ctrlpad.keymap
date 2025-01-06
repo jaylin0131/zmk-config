@@ -21,8 +21,8 @@
 // ----------------------
             bindings = <
     &tog 1 &kp N1 &kp N2
-    &kp ESC &screencut &reload 
-    &ctrl_tab  &kp LCTRL &alt_tab
+    &kp ESC &kp PRINT_SCREEN &mt LCTRL R 
+    &mt LCTRL TAB  &kp LCTRL &mt LALT TAB
             >;
         };
 
@@ -36,7 +36,7 @@
             bindings = <
     &tog 0 &kp SPACE &kp ENTER
     &trans &trans  &trans
-    &trans &deploy   &trans
+    &trans &mt LSHIFT F5  &trans
             >;
         };
     };
