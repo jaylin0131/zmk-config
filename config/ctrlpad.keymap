@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        first {
+            display-name = "FIRST";
+// -------------------
+// |  1L  |  VOL_UP  |  VOL_DOWN  |
+// |  ESC  |  SCREENCUT  |  RELOAD  |
+// |  CTRL_TAB  |  LCTRL  |  ALT_TAB  |
+// ----------------------
+            bindings = <
+    &tog BOT &kp C_VOL_UP &kp C_VOL_DOWN
+    &kp ESC &screencut &reload 
+    &ctrl_tab  &kp LCTRL &alt_tab
+            >;
+        };
+
+        bot {
+            display-name = "BOT";
+// -----------------------
+// |  0L  |  SPACE  |  ENTER  |
+// |  ESC  |   SCREENCUT  |  RELOAD  |
+// |  CTRL_TAB  |  DEPLOY  |  ALT_TAB  |
+// -----------------------
+            bindings = <
+    &tog FIRST &kp SPACE &kp ENTER
+    &trans &trans  &trans
+    &trans &deploy   &trans
+            >;
+        };
+    };
+};
+

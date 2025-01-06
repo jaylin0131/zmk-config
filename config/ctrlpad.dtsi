@@ -1,0 +1,16 @@
+/ {
+    zephyr {
+        // 定義鍵矩陣的行和列
+        key-matrix {
+            compatible = "zmk,matrix-transform";
+            rows = <3>;
+            columns = <3>;
+            row-gpios = <&gpio0 24 GPIO_ACTIVE_LOW>,  // P0.24
+                        <&gpio1 0 GPIO_ACTIVE_LOW>,  // P1.00
+                        <&gpio0 11 GPIO_ACTIVE_LOW>;  // P0.11
+            col-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>,  // P0.17
+                        <&gpio0 20 GPIO_ACTIVE_LOW>,  // P0.20
+                        <&gpio0 22 GPIO_ACTIVE_LOW>;  // P0.22
+        };
+    };
+};
