@@ -14,36 +14,36 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>; 
             bindings = <&macro_press &kp LALT>
-                     , <&macro_tap &kp TAB>
-                     , <&macro_release &kp LALT>
-                     ; 
+                    , <&macro_tap &kp TAB>
+                    , <&macro_release &kp LALT>
+                    ; 
         };
 
         ctrl_tab: ctrl_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>; 
             bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp TAB>
-                     , <&macro_release &kp LCTRL>
-                     ;
+                    , <&macro_tap &kp TAB>
+                    , <&macro_release &kp LCTRL>
+                    ;
         };
 
         deploy: deploy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>; 
             bindings = <&macro_press &kp LSHIFT>
-                     , <&macro_tap &kp F5>
-                     , <&macro_release &kp LSHIFT>
-                     ;
+                    , <&macro_tap &kp F5>
+                    , <&macro_release &kp LSHIFT>
+                    ;
         };
 
         reload: reload {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>; 
             bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp R>
-                     , <&macro_release &kp LCTRL>
-                     ;
+                    , <&macro_tap &kp R>
+                    , <&macro_release &kp LCTRL>
+                    ;
         };
     };
 
@@ -58,9 +58,9 @@
 // |  CTRL_TAB  |  LCTRL  |  ALT_TAB  |
 // ----------------------
             bindings = <
-    &tog 1 &kp C_VOL_UP &kp C_VOL_DN
-    &kp ESC &kp PSCRN &reload 
-    &ctrl_tab  &kp LCTRL &alt_tab
+                &tog 1      &kp C_VOL_UP &kp C_VOL_DN
+                &kp ESC     &kp PSCRN    &reload 
+                &ctrl_tab   &kp LCTRL    &alt_tab
             >;
         };
 
@@ -72,9 +72,9 @@
 // |  CTRL_TAB  |  DEPLOY  |  ALT_TAB  |
 // -----------------------
             bindings = <
-    &tog 0 &kp SPACE &kp ENTER
-    &trans &trans  &trans
-    &trans &deploy   &trans
+                &tog 0      &kp SPACE   &kp ENTER
+                &trans      &trans      &trans
+                &trans      &deploy     &trans
             >;
         };
     };
