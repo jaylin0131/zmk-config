@@ -13,25 +13,37 @@
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>; 
-            bindings = <&macro_tap &kp LALT &kp TAB>;
+            bindings = <&macro_press &kp LALT>
+                     , <&macro_tap &kp TAB>
+                     , <&macro_release &kp LALT>
+                     ; 
         };
 
         ctrl_tab: ctrl_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>; 
-            bindings = <&macro_tap &kp LCTRL &kp TAB>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&macro_tap &kp TAB>;
+                     , <&macro_release &kp LCTRL>
+                     ;
         };
 
         deploy: deploy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>; 
-            bindings = <&macro_tap &kp LSHIFT &kp F5>;
+            bindings = <&macro_press &kp LSHIFT>
+                     , <&macro_tap &kp F5>;
+                     , <&macro_release &kp LSHIFT>
+                     ;
         };
 
         reload: reload {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>; 
-            bindings = <&macro_tap &kp LCTRL &kp R>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&macro_tap &kp R>;
+                     , <&macro_release &kp LCTRL>
+                     ;
         };
     };
 
@@ -46,7 +58,7 @@
 // |  CTRL_TAB  |  LCTRL  |  ALT_TAB  |
 // ----------------------
             bindings = <
-    &tog 1 &kp N1 &kp N2
+    &tog 1 &kp C_VOL_UP &kp C_VOL_DN
     &kp ESC &kp PSCRN &reload 
     &ctrl_tab  &kp LCTRL &alt_tab
             >;
