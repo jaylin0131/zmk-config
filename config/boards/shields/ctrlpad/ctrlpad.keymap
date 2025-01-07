@@ -58,7 +58,7 @@
 // |  CTRL_TAB  |  LCTRL  |  ALT_TAB  |
 // ----------------------
             bindings = <
-                &tog 1      &kp C_VOL_UP &kp C_VOL_DN
+                &tog 1      &kp C_VOL_DN &kp C_VOL_UP
                 &kp ESC     &kp PSCRN    &reload 
                 &ctrl_tab   &kp LCTRL    &alt_tab
             >;
