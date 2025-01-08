@@ -92,7 +92,7 @@
             bindings = <
                 &to 0       &kp SPACE   &kp ENTER
                 &deploy     &hidiokp 0  &hidiokp 0
-                &hidiokp 0  &hidiokp 0  &hidiokp 0
+                &bootloader  &hidiokp 0  &hidiokp 0
             >;
         };
     };
