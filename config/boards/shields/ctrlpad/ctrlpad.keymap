@@ -8,7 +8,25 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEF 0
+#define HID_IO_USAGE_FEW_TO_JOYSTICK 1
+
 / {
+    zip_fwd_to_hid_io: zip_forward_fwd_to_hid_io {
+        compatible = 'zmk,input-processor-fwd-to-hid-io';
+        #input-processor-cells = <0>;
+        usage =<HID_IO_USAGE_FEW_TO_JOYSTICK>;
+    };
+
+    hidiokp: hid_io_key_press{
+        compatible = 'zmk,behavior-hid-io-key-press';
+        #binding-cells= <1>;
+    };
+    hidiokp_ibl {
+        compatible = 'zmk,input-behavior-listener';
+        input-processors = <&zip_fwd_to_hid_io>;
+    };
+
     macros {
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro";
@@ -53,12 +71,12 @@
         first {
             display-name = "FIRST";
 // -------------------
-// |  1L  |  VOL_UP  |  VOL_DOWN  |
-// |  ESC  |  SCREENCUT  |  RELOAD  |
-// |  CTRL_TAB  |  LCTRL  |  ALT_TAB  |
+// |    1L   |  VOL_UP | VOL_DOWN |
+// |   ESC   |SCREENCUT|  RELOAD  |
+// | CTRL_TAB|  LCTRL  |  ALT_TAB |
 // ----------------------
             bindings = <
-                &tog 1      &kp C_VOL_DN &kp C_VOL_UP
+                &to 1       &kp C_VOL_DN &kp C_VOL_UP
                 &kp ESC     &kp PSCRN    &reload 
                 &ctrl_tab   &kp LCTRL    &alt_tab
             >;
@@ -67,14 +85,14 @@
         bot {
             display-name = "BOT";
 // -----------------------
-// |  0L  |  SPACE  |  ENTER  |
-// |  ESC  |   SCREENCUT  |  RELOAD  |
-// |  CTRL_TAB  |  DEPLOY  |  ALT_TAB  |
+// |  0L     |  SPACE  |  ENTER  |
+// | DEPLOY  |  PS1    |  PS2    |
+// |  PS3    |  PS4    |  PS5    |
 // -----------------------
             bindings = <
-                &tog 0      &kp SPACE   &kp ENTER
-                &trans      &trans      &trans
-                &trans      &deploy     &trans
+                &to 0       &kp SPACE   &kp ENTER
+                &deploy     &hidiokp 0  &hidiokp 0
+                &hidiokp 0  &hidiokp 0  &hidiokp 0
             >;
         };
     };
