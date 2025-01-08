@@ -4,9 +4,8 @@ name: CtrlPad
 type: shield
 url: https://github.com/tshort/dactyl-keyboard
 requires: [pro_micro]
-exposes: [i2c_oled]
+exposes: []
 features:
   - keys
-  - display
 siblings:
   - ctrlpad

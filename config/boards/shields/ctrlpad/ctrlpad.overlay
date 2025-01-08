@@ -10,7 +10,6 @@
     chosen {
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
-        zephyr_display = &oled;
     };
 
     default_kscan: kscan {
