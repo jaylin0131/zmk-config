@@ -13,17 +13,17 @@
 
 / {
     zip_fwd_to_hid_io: zip_forward_fwd_to_hid_io {
-        compatible = 'zmk,input-processor-fwd-to-hid-io';
+        compatible = "zmk,input-processor-fwd-to-hid-io";
         #input-processor-cells = <0>;
         usage =<HID_IO_USAGE_FEW_TO_JOYSTICK>;
     };
 
     hidiokp: hid_io_key_press{
-        compatible = 'zmk,behavior-hid-io-key-press';
+        compatible = "zmk,behavior-hid-io-key-press";
         #binding-cells= <1>;
     };
     hidiokp_ibl {
-        compatible = 'zmk,input-behavior-listener';
+        compatible = "zmk,input-behavior-listener";
         input-processors = <&zip_fwd_to_hid_io>;
     };
 
